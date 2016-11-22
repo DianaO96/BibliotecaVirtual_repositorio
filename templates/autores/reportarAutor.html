@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+	<title>reportar</title>
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/style.css">
+</head>
+<body>
+	<h1>Todos los autores</h1>
+	<ul>
+		{% for autor in autores %}
+			<li><b>Autor:</b>{{autor.nombre}}</li>
+			<li><b>Pais:</b>{{autor.pais}}</li>
+			<li><b>Descripción:</b>{{autor.descripcion}}</li>
+			<li><b>Foto:</b><img src="{{MEDIA_URL}}{{autor.foto}}"></li>
+		{%  endfor %}
+	</ul>
+
+</body>
+{% endblock %}
